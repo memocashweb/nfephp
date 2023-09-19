@@ -2239,7 +2239,7 @@ class ToolsNFe extends BaseTools
         $hex = "";
         $iCount = 0;
         do {
-            $hex .= sprintf("%02x", ord($str{$iCount}));
+            $hex .= sprintf("%02x", ord($str[$iCount]));
             $iCount++;
         } while ($iCount < strlen($str));
         return $hex;
