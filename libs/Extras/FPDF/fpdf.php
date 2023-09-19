@@ -1096,7 +1096,7 @@ class FPDF
             $this->Error('mbstring overloading must be disabled');
         }
         //Disable runtime magic quotes
-        if (get_magic_quotes_runtime()) {
+        if(version_compare(PHP_VERSION, '7.4.0', '<') && get_magic_quotes_runtime()) {
             @set_magic_quotes_runtime(0);
         }
     }
@@ -1589,7 +1589,7 @@ class FPDF
     {
         $filter=($this->compress) ? '/Filter /FlateDecode ' : '';
         reset($this->images);
-        while (list($file,$info)=each($this->images)) {
+        foreach ($this->images as $file => $info) {
             $this->_newobj();
             $this->images[$file]['n']=$this->n;
             $this->_out('<</Type /XObject');
