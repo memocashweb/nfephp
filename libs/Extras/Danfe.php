@@ -360,6 +360,11 @@ class Danfe extends CommonNFePHP implements DocumentoNFePHP
      * @var integer
      */
     protected $debugMode=2;
+    /**
+     * @var int|mixed
+     */
+    private mixed $situacao_externa;
+    private ?\DOMNode $nfeProc;
 
     /**
      * __construct
