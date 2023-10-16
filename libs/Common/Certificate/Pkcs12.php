@@ -421,8 +421,7 @@ class Pkcs12
             //executa a assinatura
             $xmlResp = $this->zSignXML($xmldoc, $root, $node, $objSSLPriKey);
         }
-        //libera a chave privada
-        openssl_free_key($objSSLPriKey);
+
         return $xmlResp;
     }
 
